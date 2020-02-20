@@ -5,14 +5,17 @@ import { Landing } from "../components/Landing";
 export const routes = [
     {
         path: "/login",
-        component: Login
-    },
-    {
-        path: "/home",
-        component: Home,
+        component: Login,
     },
     {
         path: "/",
         component: Landing,
     }
 ];
+
+export const protectedRoutes = [
+    {
+        path: "/home",
+        component: Home,
+    }
+]
