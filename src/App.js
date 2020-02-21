@@ -51,6 +51,7 @@ function App() {
 const RouteTo = (route) => {
   return (
     <Route
+      exact
       path={route.path}
     >
       <route.component routes={route.routes} />
@@ -62,6 +63,7 @@ const RouteTo = (route) => {
 function PrivateRouteTo({ component: Component, isSecure, route, ...rest }) {
   return (
     <Route
+      exact
       {...rest}
       render={({ location }) =>
         // if not authenticated then move to login page, else show children
