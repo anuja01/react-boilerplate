@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,9 +8,12 @@ import {
   useHistory
 } from "react-router-dom";
 import { routes, protectedRoutes } from "./router";
+import { DataContext } from './context';
 
 function App() {
-  const [isSecure, setIsSecure] = React.useState(false)
+  // by adding context, can store state seperately and access it
+  // no props drilling
+  const { isSecure } = useContext(DataContext)
   return (
     <Router>
       <div>
