@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
   Link,
-  useHistory
 } from "react-router-dom";
 import { routes, protectedRoutes } from "./router";
 import { DataContext } from './context';
@@ -73,6 +72,7 @@ function PrivateRouteTo({ component: Component, isSecure, route, ...rest }) {
         isSecure ? (
           <Component />
         ) : (
+          // from is set, so after login, can proceed directly to the page user tried
             <Redirect
               to={{
                 pathname: "/login",
